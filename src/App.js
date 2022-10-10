@@ -8,6 +8,7 @@ function App() {
 
   let [글제목, 글제목변경] = useState(['남자 코트 추천', '강남 우동맛집', '파이썬 독학']);
   let [따봉, 따봉변경] = useState(0);
+  let [modal, setModal] = useState(false);
 
   return (
 
@@ -27,17 +28,17 @@ function App() {
       </div>
 
       <div className='list'>
-        <h4>{글제목[2]}</h4>
+        <h4 onClick={()=>{ setModal(true) }}>{글제목[2]}</h4>
         <p>10월 9일 발행</p>
       </div>
 
-      <Modal></Modal>
+      {
+        modal == true ? <Modal/> : null
+      }
 
     </div>
   );
 }
-
-// let Modal = () => {return();} component 이렇게 만들어도 됨 ㅇㅋ?
 
 function Modal(){
   return (
