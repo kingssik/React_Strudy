@@ -28,9 +28,10 @@ function App() {
       </div>
 
       <div className='list'>
-        <h4 onClick={()=>{ setModal(true) }}>{글제목[2]}</h4>
+        <h4 onClick={()=>{ setModal(!modal) }}>{글제목[2]}</h4>
         <p>10월 9일 발행</p>
       </div>
+
 
       {
         modal == true ? <Modal/> : null
