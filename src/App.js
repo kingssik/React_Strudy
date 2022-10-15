@@ -17,7 +17,7 @@ function App() {
         <h4>ReactBlog</h4>
       </div>
      
-      <div className='list'>
+      {/* <div className='list'>
         <h4>{글제목[0]} <span onClick={ () => { 따봉변경(따봉+1) }}>👍</span> {따봉} </h4>
         <p>10월 9일 발행</p>
       </div>
@@ -30,8 +30,18 @@ function App() {
       <div className='list'>
         <h4 onClick={()=>{ setModal(!modal) }}>{글제목[2]}</h4>
         <p>10월 9일 발행</p>
-      </div>
-
+      </div> */}
+      
+      {
+        글제목.map(function(a, i){
+          return (
+            <div className='list' key={i}>
+              <h4 onClick={()=>{ setModal(!modal) }}>{ 글제목[i] } <span onClick={ () => { 따봉변경(따봉+1) }}>👍</span> {따봉}</h4>
+              <p>10월 9일 발행</p>
+            </div>
+          )
+        })
+      }
 
       {
         modal == true ? <Modal/> : null
